@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  docker-spring-service:
+    container_name: docker-spring
+    image: docker-spring
+    volumes:
+      - example-app:/data/docker-demo
+    ports:
+      - "8080:8080"
+    networks:
+      - workshop-network
+
+networks:
+  workshop-network:
+    external: true
+    driver: bridge
+volumes:
+  example-app:
+    
